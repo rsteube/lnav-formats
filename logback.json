@@ -1,0 +1,54 @@
+{
+  "logback": {
+    "title": "Logback log format",
+    "description": "Log format used by spring-boot",
+    "url": "",
+    "regex": {
+      "onestamp": {
+        "pattern": "^(?<timestamp>\\d{4}-\\d{2}-\\d{2} \\d{2}:\\d{2}:\\d{2}(?:.\\d{3})?)\\s+(?<alert_level>\\w+) (?<line>\\d+) --- \\[(?<thread>[\\w\\d -]+)\\] (?<class>[^\\s]+)\\s+: (?<body>.*)$"
+      }
+    },
+    "level-field": "alert_level",
+    "level": {
+      "info": "STATUS",
+      "error": "ERROR",
+      "warning": "WARN",
+      "debug": "DEBUG",
+      "info": "INFO"
+    },
+    "value": {
+      "function": {
+        "kind": "string",
+        "identifier": true
+      },
+      "alert_level": {
+        "kind": "string",
+        "identifier": true
+      },
+      "source": {
+        "kind": "string",
+        "identifier": true
+      },
+      "debug_level": {
+        "kind": "string",
+        "identifier": true
+      },
+      "class": {
+        "kind": "string",
+        "identifier": true
+      },
+      "body": {
+        "kind": "string"
+      }
+    },
+    "sample": [{
+      "line": "2019-01-16 08:41:42.709  INFO 213 --- [  restartedMain] ationConfigEmbeddedWebApplicationContext : Refreshing org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@57d03c7"
+    }, {
+      "line": "2019-01-16 08:41:46.417  INFO 213 --- [  restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.cache.annotation.ProxyCachingConfiguration' of type [org.springframework.cache.annotation.ProxyCachingConfiguration$$EnhancerBySpringCGLIB$$11a248b5] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)"
+    }, {
+      "line": "2019-01-16 08:41:46.926  INFO 213 --- [  restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'cacheAutoConfigurationValidator' of type [org.springframework.boot.autoconfigure.cache.CacheAutoConfiguration$CacheManagerValidator] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)"
+    }, {
+      "line": "2019-01-16 08:41:48.909 ERROR 213 --- [ost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : For security constraints with URL pattern [/*] the HTTP methods [POST GET] are uncovered."
+    }]
+  }
+}
