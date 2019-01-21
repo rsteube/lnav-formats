@@ -2,38 +2,29 @@
   "logback": {
     "title": "Logback log format",
     "description": "Log format used by spring-boot",
-    "url": "",
+    "url": "https://docs.spring.io/spring-boot/docs/current/reference/html/boot-features-logging.html#boot-features-logging-format",
     "regex": {
       "onestamp": {
-        "pattern": "^(?<timestamp>\\d{4}-\\d{2}-\\d{2} \\d{2}:\\d{2}:\\d{2}(?:.\\d{3})?)\\s+(?<alert_level>\\w+) (?<line>\\d+) --- \\[(?<thread>[\\w\\d -]+)\\] (?<class>[^\\s]+)\\s+: (?<body>.*)$"
+        "pattern": "^(?<timestamp>\\d{4}-\\d{2}-\\d{2} \\d{2}:\\d{2}:\\d{2}(?:.\\d{3})?)\\s+(?<level>\\w+) (?<process>\\d+) --- \\[(?<thread>[\\w\\d -]+)\\] (?<logger>[^\\s]+)\\s+: (?<body>.*)$"
       }
     },
-    "level-field": "alert_level",
     "level": {
-      "info": "STATUS",
       "error": "ERROR",
       "warning": "WARN",
+      "info": "INFO",
       "debug": "DEBUG",
-      "info": "INFO"
+      "trace": "TRACE"
     },
     "value": {
-      "function": {
+      "level": {
         "kind": "string",
         "identifier": true
       },
-      "alert_level": {
-        "kind": "string",
+      "process": {
+        "kind": "integer",
         "identifier": true
       },
-      "source": {
-        "kind": "string",
-        "identifier": true
-      },
-      "debug_level": {
-        "kind": "string",
-        "identifier": true
-      },
-      "class": {
+      "logger": {
         "kind": "string",
         "identifier": true
       },
