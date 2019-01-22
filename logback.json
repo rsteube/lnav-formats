@@ -24,6 +24,10 @@
         "kind": "integer",
         "identifier": true
       },
+      "thread": {
+        "kind": "string",
+        "identifier": true
+      },
       "logger": {
         "kind": "string",
         "identifier": true
