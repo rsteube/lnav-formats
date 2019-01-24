@@ -5,7 +5,7 @@
     "url": "https://docs.spring.io/spring-boot/docs/current/reference/html/boot-features-logging.html#boot-features-logging-format",
     "regex": {
       "onestamp": {
-        "pattern": "^(?<timestamp>\\d{4}-\\d{2}-\\d{2} \\d{2}:\\d{2}:\\d{2}(?:.\\d{3})?)\\s+(?<level>\\w+) (?<process>\\d+) --- \\[(?<thread>[\\w\\d -]+)\\] (?<logger>[^\\s]+)\\s+: (?<body>.*)$"
+        "pattern": "^(?<timestamp>\\d{4}-\\d{2}-\\d{2} \\d{2}:\\d{2}:\\d{2}(?:.\\d{3})?)\\s+(?<level>\\w+) (?<process>\\d+) --- \\[(?<thread>[\\w\\d -]+)\\] (?<logger>[^\\s]+)\\s+: (?<body>(?:.|\\n)*)$"
       }
     },
     "level": {
@@ -44,6 +44,8 @@
       "line": "2019-01-16 08:41:46.926  INFO 213 --- [  restartedMain] trationDelegate$BeanPostProcessorChecker : Bean 'cacheAutoConfigurationValidator' of type [org.springframework.boot.autoconfigure.cache.CacheAutoConfiguration$CacheManagerValidator] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)"
     }, {
       "line": "2019-01-16 08:41:48.909 ERROR 213 --- [ost-startStop-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : For security constraints with URL pattern [/*] the HTTP methods [POST GET] are uncovered."
+    }, {
+      "line": "2019-01-15 23:17:08.483  INFO 1860 --- [https-jsse-nio-8443-exec-5] o.apache.coyote.http11.Http11Processor   : Error parsing HTTP request header"
     }]
   }
 }
