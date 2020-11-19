@@ -1,0 +1,29 @@
+{
+  "carapace": {
+    "title": "carapace log format",
+    "description": "Log format used by carapace",
+    "url": "https://github.com/rsteube/carapace",
+    "regex": {
+      "onestamp": {
+        "pattern": "^(?<timestamp>\\d{4}\\/\\d{2}\\/\\d{2} \\d{2}:\\d{2}:\\d{2}) (?<shell>[^ ]+) (?<args>.*)(?<body>(?:.|\\n)*)$"
+      }
+    },
+    "value": {
+      "shell": {
+        "kind": "string",
+        "identifier": true
+      },
+      "args": {
+        "kind": "string"
+      },
+      "body": {
+        "kind": "string"
+      }
+    },
+    "sample": [{
+      "line": "2020/11/19 12:18:47 powershell [/home/rsteube/go/bin/gh _carapace powershell state gh repo view cli]"
+    }, {
+      "line": "2020/11/19 09:04:41 bash [example _carapace elvish state example]"
+    }]
+  }
+}
